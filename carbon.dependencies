@@ -1,0 +1,20 @@
+[
+  {
+    "repository": "CarbonROM/android_device_google_wahoo",
+    "target_path": "device/google/wahoo"
+  },
+  {
+    "repository": "MethHeadAlert/android_device_google_muskie",
+    "target_path": "device/google/muskie"
+    "branch":      "carbon/cr-6.1"
+  },
+  {
+    "repository": "CarbonROM/android_kernel_google_wahoo",
+    "target_path": "kernel/google/wahoo"
+  }
+  {
+    "repository": "MethHeadAlert/android_vendor_google_walleye",
+    "target_path": "device/google/muskie"
+    "branch":      "carbon/cr-6.1"
+  },
+]

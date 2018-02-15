@@ -25,7 +25,7 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 LINEAGE_ROOT="$MY_DIR"/../../..
 
-HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
+HELPER="$LINEAGE_ROOT"/vendor/carbon/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -54,7 +54,7 @@ setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT"
 write_walleye_headers
 
 # The standard blobs
-write_makefiles "$MY_DIR"/lineage-proprietary-files.txt
+write_makefiles "$MY_DIR"/carbon-proprietary-files.txt
 
 # Done
 write_footers
