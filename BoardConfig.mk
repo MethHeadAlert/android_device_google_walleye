@@ -20,6 +20,7 @@ DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x00000056
 include device/google/wahoo/BoardConfig.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
+BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 earlycon=msm_serial_dm,0xc1b0000
 KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/google/wahoo
 TARGET_KERNEL_CONFIG := custom_defconfig

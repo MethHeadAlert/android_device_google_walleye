@@ -151,7 +151,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.use_fifo_ui=1
 
 # Update engine
-PRODUCT_PACKAGES += brillo_update_payload
+#PRODUCT_PACKAGES += brillo_update_payload
 
 # Self Extractor blobs that can be built
 PRODUCT_PACKAGES += \

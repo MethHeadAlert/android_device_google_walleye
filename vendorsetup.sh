@@ -14,7 +14,4 @@
 # limitations under the License.	
 #	
 
-add_lunch_combo aosp_walleye-userdebug
-add_lunch_combo aosp_walleye-testing	
-add_lunch_combo carbon_walleye-userdebug
 add_lunch_combo du_walleye-userdebug
