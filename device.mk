@@ -31,18 +31,13 @@ DEVICE_PACKAGE_OVERLAYS += device/google/walleye/overlay
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
 
-# HWUI cache sizes
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hwui.texture_cache_size=56 \
-    ro.hwui.layer_cache_size=32 \
-    ro.hwui.path_cache_size=16
-
 include device/google/wahoo/device.mk
 
 # Audio XMLs
 PRODUCT_COPY_FILES += \
     device/google/walleye/mixer_paths_tavil.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tavil.xml \
     device/google/walleye/audio_platform_info_tavil.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_tavil.xml \
+    device/google/walleye/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     device/google/walleye/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
 # Bug 62375603
@@ -121,6 +116,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_width=2048 \
     ro.hwui.text_large_cache_height=1024
 
+# HWUI cache sizes
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hwui.texture_cache_size=56 \
+    ro.hwui.layer_cache_size=32 \
+    ro.hwui.path_cache_size=16
+
 # NFC/camera interaction workaround - DO NOT COPY TO NEW DEVICES
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1
@@ -156,6 +157,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Self Extractor blobs that can be built
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
+
+# touchscreen configuration
+PRODUCT_COPY_FILES += \
+    device/google/walleye/touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/touchscreen.idc
+
+# Vibrator HAL
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.vibrator.hal.click.duration=10 \
+  ro.vibrator.hal.tick.duration=4
 
 # Default priv-app permissions
 PRODUCT_COPY_FILES += \
