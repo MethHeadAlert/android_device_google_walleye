@@ -6,11 +6,8 @@ TARGET_SCREEN_WIDTH := 1080
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit Carbon GSM telephony parts
-$(call inherit-product, vendor/carbon/config/gsm.mk)
-
-# Inherit Carbon product configuration
-$(call inherit-product, vendor/carbon/config/common.mk)
+# Include DU common configuration
+include vendor/du/config/common_full_phone.mk
 
 -include device/google/muskie/device-carbon.mk
 
