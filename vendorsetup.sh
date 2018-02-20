@@ -13,5 +13,7 @@
 # See the License for the specific language governing permissions and	
 # limitations under the License.	
 #	
-	
-add_lunch_combo carbon_walleye-userdebug
+
+add_lunch_combo aosp_walleye-userdebug
+add_lunch_combo aosp_walleye_test-userdebug	
+add_lunch_combo dirtyunicorns_walleye-userdebug

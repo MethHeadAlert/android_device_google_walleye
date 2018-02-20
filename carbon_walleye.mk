@@ -9,10 +9,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 # Include DU common configuration
 include vendor/du/config/common_full_phone.mk
 
--include device/google/muskie/device-carbon.mk
-
 # Inherit device product configuration
-$(call inherit-product, device/google/muskie/device.mk)
+$(call inherit-product, device/google/walleye/device.mk)
 
 PRODUCT_PACKAGES += \
     Dialer \
@@ -20,14 +18,14 @@ PRODUCT_PACKAGES += \
     WallpaperPicker
 
 PRODUCT_COPY_FILES += \
-    device/google/muskie/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects_vendor.xml
+    device/google/walleye/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects_vendor.xml
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_RESTRICT_VENDOR_FILES := owner
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
 PRODUCT_DEVICE := walleye
-PRODUCT_NAME := carbon_walleye
+PRODUCT_NAME := dirtyunicorns_walleye
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 2
 TARGET_MANUFACTURER := Google
@@ -41,24 +39,48 @@ $(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
 
 $(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 
-#GAPPS_VARIANT := pico
+GAPPS_VARIANT := pico
+#GAPPS_FORCE_MMS_OVERRIDES := true
+#GAPPS_PACKAGE_OVERRIDES := PrebuiltBugle
+PRODUCT_PACKAGES += Feedback
+PRODUCT_PACKAGES += GoogleBackupTransport
+PRODUCT_PACKAGES += GoogleContactsSyncAdapter
+PRODUCT_PACKAGES += GoogleFeedback
+PRODUCT_PACKAGES += GoogleOneTimeInitializer
+PRODUCT_PACKAGES += GooglePartnerSetup
+PRODUCT_PACKAGES += PrebuiltGmsCore
+PRODUCT_PACKAGES += GoogleServicesFramework
+PRODUCT_PACKAGES += GoogleLoginService
+PRODUCT_PACKAGES += SetupWizard
+PRODUCT_PACKAGES += Phonesky
+PRODUCT_PACKAGES += GoogleCalendarSyncAdapter
+PRODUCT_PACKAGES += GoogleTTS
+PRODUCT_PACKAGES += GooglePackageInstaller
+PRODUCT_PACKAGES += PrebuiltGmsCoreInstantApps
+PRODUCT_PACKAGES += Turbo
+#PRODUCT_PACKAGES += PrebuiltBugle
 
 #GAPPS_VARIANT := nano
+PRODUCT_PACKAGES += FaceLock
+PRODUCT_PACKAGES += Velvet
 
-GAPPS_PACKAGE_OVERRIDES := PrebuiltGmail
+#GAPPS_VARIANT := micro
 GAPPS_FORCE_BROWSER_OVERRIDES := true
-
-GAPPS_VARIANT := micro
-
+GAPPS_PACKAGE_OVERRIDES := Chrome
+GAPPS_PACKAGE_OVERRIDES := PrebuiltGmail
 GAPPS_FORCE_PIXEL_LAUNCHER := false
 GAPPS_EXCLUDED_PACKAGES := PixelLauncher
 GAPPS_EXCLUDED_PACKAGES := Wallpapers
 GAPPS_EXCLUDED_PACKAGES := PixelLauncherIcons
 GAPPS_EXCLUDED_PACKAGES := GoogleHome
+PRODUCT_PACKAGES += CalendarGooglePrebuilt
+PRODUCT_PACKAGES += Chrome
+PRODUCT_PACKAGES += PrebuiltGmail
 
 #GAPPS_VARIANT := mini
+GAPPS_PACKAGE_OVERRIDES := CalculatorGoogle
+GAPPS_PACKAGE_OVERRIDES := PrebuiltDeskClockGoogle
 GAPPS_BYPASS_PACKAGE_OVERRIDES := Photos
-GAPPS_EXCLUDED_PACKAGES := PlusOne
 PRODUCT_PACKAGES += CalculatorGoogle
 PRODUCT_PACKAGES += PrebuiltDeskClockGoogle
 PRODUCT_PACKAGES += PlusOne
@@ -72,7 +94,6 @@ GAPPS_EXCLUDED_PACKAGES := Books
 GAPPS_EXCLUDED_PACKAGES := FitnessPrebuilt
 GAPPS_EXCLUDED_PACKAGES := Videos
 GAPPS_EXCLUDED_PACKAGES := PlayGames
-#GAPPS_EXCLUDED_PACKAGES := talkback
 PRODUCT_PACKAGES += CloudPrint2
 PRODUCT_PACKAGES += EditorsDocs
 PRODUCT_PACKAGES += Drive
@@ -86,26 +107,23 @@ PRODUCT_PACKAGES += talkback
 
 #GAPPS_VARIANT := stock
 #GAPPS_EXCLUDED_PACKAGES := GoogleCamera
-#GAPPS_EXCLUDED_PACKAGES := GoogleContacts
-GAPPS_FORCE_MMS_OVERRIDES := false
-GAPPS_EXCLUDED_PACKAGES := PrebuiltBugle
+GAPPS_EXCLUDED_PACKAGES := GoogleContacts
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
-GAPPS_FORCE_DIALER_OVERRIDES := true
 #GAPPS_FORCE_DIALER_OVERRIDES := true
-#GAPPS_EXCLUDED_PACKAGES := GoogleDialer
+GAPPS_EXCLUDED_PACKAGES := GoogleDialer
 PRODUCT_PACKAGES += GoogleCamera
-PRODUCT_PACKAGES += GoogleContacts
+#PRODUCT_PACKAGES += GoogleContacts
 PRODUCT_PACKAGES += LatinImeGoogle
 PRODUCT_PACKAGES += TagGoogle
 PRODUCT_PACKAGES += GoogleVrCore
 PRODUCT_PACKAGES += GooglePrintRecommendationService
 PRODUCT_PACKAGES += GoogleExtServices
 PRODUCT_PACKAGES += GoogleExtShared
-PRODUCT_PACKAGES += GoogleDialer
+#PRODUCT_PACKAGES += GoogleDialer
 PRODUCT_PACKAGES += WebViewGoogle
 
 #GAPPS_VARIANT := super
-GAPPS_EXCLUDED_PACKAGES := Wallet
+#GAPPS_EXCLUDED_PACKAGES := Wallet
 GAPPS_EXCLUDED_PACKAGES := GoogleHindiIME
 GAPPS_EXCLUDED_PACKAGES := GoogleJapaneseInput
 GAPPS_EXCLUDED_PACKAGES := KoreanIME

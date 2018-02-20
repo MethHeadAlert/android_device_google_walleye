@@ -21,12 +21,22 @@ include device/google/wahoo/BoardConfig.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
 
-#sepolicy common to muskie/walleye
-BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
+# Kernel defconfig
+TARGET_KERNEL_CONFIG := carbon_taimen_defconfig
+
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
+
+# Time services
+BOARD_USES_QC_TIME_SERVICES := true
+
+#sepolicy common to walleye
+BOARD_SEPOLICY_DIRS += device/google/walleye/sepolicy
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/wahoo-setup.sh
 
 BOARD_LISA_TARGET_SCRIPTS := device/google/wahoo/lisa/
 
--include device/google/muskie/BoardConfigCarbon.mk
+-include vendor/google/walleye/BoardConfigVendor.mk
