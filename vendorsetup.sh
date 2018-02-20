@@ -16,4 +16,4 @@
 
 add_lunch_combo aosp_walleye-userdebug
 add_lunch_combo aosp_walleye_test-userdebug	
-add_lunch_combo dirtyunicorns_walleye-userdebug
+add_lunch_combo du_walleye-userdebug

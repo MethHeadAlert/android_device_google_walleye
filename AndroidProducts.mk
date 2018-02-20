@@ -17,4 +17,4 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_walleye.mk \
     $(LOCAL_DIR)/aosp_walleye_test.mk \
-    $(LOCAL_DIR)/dirtyunicorns_walleye.mk \
+    $(LOCAL_DIR)/du_walleye.mk \
